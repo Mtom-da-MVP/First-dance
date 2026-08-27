@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ho_Minh_Hung
+namespace Ho_Minh_Hung.Session4
 {
     internal class GiaiPT
     {
@@ -51,7 +51,7 @@ namespace Ho_Minh_Hung
                 }
             }
         }
-        public static void Main(string [] args)
+        public static void Main3(string [] args)
         {
             Console.Write("Nhap a ="); double a = double.Parse(Console.ReadLine());
             Console.Write("Nhap b ="); double b = double.Parse(Console.ReadLine());
@@ -59,6 +59,6 @@ namespace Ho_Minh_Hung
             GiaiPTrinh(a, b, c);
             Console.ReadKey();
         }
-
+        
     }
 }

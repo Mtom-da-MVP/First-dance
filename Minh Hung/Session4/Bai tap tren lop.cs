@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Ho_Minh_Hung
+namespace Ho_Minh_Hung.Session4
 {
     internal class Bai_tap_tren_lop
     {
@@ -16,16 +16,14 @@ namespace Ho_Minh_Hung
             Console.WriteLine($"{a} * {b} = {a * b}");
             Console.WriteLine($"{a} / {b} = {a / b}");
             Console.WriteLine($"{a} % {b} = {a % b}");
-            Console.ReadKey();
         }
         static void bai_2()
         {
             Console.Write("Nhap y = ");
-            int y = int.Parse( Console.ReadLine() );
+            int y = int.Parse(Console.ReadLine());
 
             int x = y*y + 2*y + 1;
             Console.WriteLine($"y^2 + 2y + 1 = {x}");
-            
         }
         public static void Main1(string [] args)
         {
