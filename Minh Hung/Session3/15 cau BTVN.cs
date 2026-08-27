@@ -38,30 +38,33 @@ namespace Ho_Minh_Hung.Session3
             double canNang = double.Parse(Console.ReadLine());
             double BMI = canNang / Math.Pow(chieuCao,2);
             Console.WriteLine($"Chi so BMI cua ban: {BMI:F2}");
-            if (BMI < 18.5)
+            switch(BMI)
             {
+                case double n when n < 18.5d:
                 Console.WriteLine("Phan loai suc khoe: Thieu can");
-            }
-            if (BMI >= 18.5 && BMI < 23)
-            {
+                    break;
+                case double n when n >= 18.5d && n < 23:
                 Console.WriteLine("Phan loai suc khoe: Binh thuong");
-            }
-            if (BMI >= 23 && BMI <25)
-            {
+                    break;
+                case double n when n >= 23 && n < 25:
                 Console.WriteLine("Phan loai suc khoe: Tien beo phi");
-            }
-            if (BMI >= 25)
-            {
+                    break;
+                default:
                 Console.WriteLine("Phan loai suc khoe: Beo phi");
+                    break;
             }
             double canNangToiThieu = 18.5 * Math.Pow(chieuCao, 2);
             double canNangToiDa = 22.9 * Math.Pow(chieuCao, 2);
             Console.WriteLine($"Khuyen dung: Can nang ly tuong cua ban nen tu" +
                 $" {canNangToiThieu:F2}kg den {canNangToiDa:F2}kg");
         }
+        static void bai3()
+        {
+        
+        }
         public static void Main(string[] args)
         {
-            bai1();
+            
             bai2();
             Console.ReadKey();
         }
