@@ -40,10 +40,10 @@ namespace Ho_Minh_Hung.Session3
             Console.WriteLine($"Chi so BMI cua ban: {BMI:F2}");
             switch(BMI)
             {
-                case double n when n < 18.5d:
+                case double n when n < 18.5:
                 Console.WriteLine("Phan loai suc khoe: Thieu can");
                     break;
-                case double n when n >= 18.5d && n < 23:
+                case double n when n >= 18.5 && n < 23:
                 Console.WriteLine("Phan loai suc khoe: Binh thuong");
                     break;
                 case double n when n >= 23 && n < 25:
@@ -60,9 +60,20 @@ namespace Ho_Minh_Hung.Session3
         }
         static void bai3()
         {
-        
+
         }
-        public static void Main(string[] args)
+
+        
+            enum CurrencyType
+            {
+                USD = 1,
+                EUR = 2,
+                JPY = 3,
+                GBP = 4
+            }
+        
+        
+        public static void Main1(string[] args)
         {
             
             bai2();
