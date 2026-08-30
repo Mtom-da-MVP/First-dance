@@ -72,11 +72,39 @@ namespace Ho_Minh_Hung.Session4
                 Console.WriteLine("Day la tam giac khong co gi dac biet");
             }
         }
+        static void bai4()
+        {
+            Console.Write("Nhap hoanh do: ");
+            float x = float.Parse(Console.ReadLine());
+            Console.Write("Nhap tung do: ");
+            float y = float.Parse(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine("Diem nam trong goc phan tu thu nhat");
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("Diem nam trong goc phan tu thu hai");
+            }
+            else if (x < 0 && y < 0)
+            {
+                Console.WriteLine("Diem nam trong goc phan tu thu ba");
+            }
+            else if (x > 0 && y < 0)
+            {
+                Console.WriteLine("Diem nam trong goc phan tu thu tu");
+            }
+            else
+            {
+                Console.WriteLine("Diem nam tren truc");
+            }
+        }
         public static void Main(string[] args)
         {
             bai1();
             bai2();
             bai3();
+            bai4();
             Console.ReadKey();
         }
         
