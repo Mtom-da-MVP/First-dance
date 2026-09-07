@@ -99,7 +99,7 @@ namespace Ho_Minh_Hung.Session4
                 Console.WriteLine("Diem nam tren truc");
             }
         }
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             bai1();
             bai2();
