@@ -6,7 +6,7 @@ namespace Ho_Minh_Hung.Session7
 {
     internal class BT_tren_lop
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             Console.Write("Nhap do dai mang mong muon: ");
             int n = int.Parse(Console.ReadLine());

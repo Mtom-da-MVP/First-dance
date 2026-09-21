@@ -8,9 +8,12 @@ namespace Ho_Minh_Hung.Session6
     {
         public static void Main(string[] args)
         {
-
+            Console.Write($"{TinhTong(2,3)}");
         }
 
-        static 
+        static int TinhTong(int a, int b)
+        {
+            return a + b;
+        }
     }
 }
