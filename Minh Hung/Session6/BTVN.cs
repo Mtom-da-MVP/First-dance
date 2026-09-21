@@ -6,5 +6,11 @@ namespace Ho_Minh_Hung.Session6
 {
     internal class BTVN
     {
+        public static void Main(string[] args)
+        {
+
+        }
+
+        static 
     }
 }
