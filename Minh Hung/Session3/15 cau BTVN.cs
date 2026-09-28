@@ -1,6 +1,7 @@
 ﻿using Ho_Minh_Hung.Session4;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Ho_Minh_Hung.Session3
@@ -58,10 +59,6 @@ namespace Ho_Minh_Hung.Session3
             Console.WriteLine($"Khuyen dung: Can nang ly tuong cua ban nen tu" +
                 $" {canNangToiThieu:F2}kg den {canNangToiDa:F2}kg");
         }
-        static void bai3()
-        {
-
-        }
 
         
             enum CurrencyType
@@ -71,12 +68,37 @@ namespace Ho_Minh_Hung.Session3
                 JPY = 3,
                 GBP = 4
             }
+        static decimal doiTien(decimal vnd, CurrencyType type)
+        {
+            decimal netvnd = vnd * (1 - 0.005m);
+            decimal rate = type switch
+            {
+                CurrencyType.USD => 25400m,
+                CurrencyType.EUR => 27200m,
+                CurrencyType.JPY => 165m,
+                CurrencyType.GBP => 32000m,
+            };
+            return Math.Round(netvnd / rate, 2);
+                
+        }
+        static void DemNgaySinhNhat(string dobstr)
+        {
+            if (!DateTime.TryParseExact(dobstr, "dd/mm/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dob)) return;
+            DateTime today = DateTime.Now.Date;
+            int age = today.Year - dob.Year;
+            if (today < dob.AddYears(age)) age--;
+            DateTime nextbirthday = dob.AddYears(age + (today > dob.AddYears(age) ? 1 : 0));
+            Console.WriteLine($"Tuoi: {age}");
+        }
         
         
         public static void Main1(string[] args)
         {
-            
-            bai2();
+
+            decimal soTienVnd = 10000000m;
+            decimal usd = doiTien(soTienVnd, CurrencyType.USD);
+            Console.WriteLine($"10 trieu vnd doi ra duoc {usd}USD");
+
             Console.ReadKey();
         }
 
