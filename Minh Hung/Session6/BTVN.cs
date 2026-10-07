@@ -22,14 +22,26 @@ namespace Ho_Minh_Hung.Session6
             int x = 3; int y = 6; int z = 9;
             Console.WriteLine($"So lon nhat trong 3 so la: {timSoLonNhat(x, y, z)}");
             //Bai 4
+            Console.Write("Nhap so muon tim giai thua: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Giai thua cua {b} la: {TinhGiaiThua(b)}");
             //Bai 5
+            Console.Write("Nhap chuoi muon dao: ");
+            string chuoiCanDao = Console.ReadLine();
+            Console.WriteLine($"Chuoi da dao nguoc la: {DaoNguocChuoi(chuoiCanDao)}");
             //Bai 6
+            Console.Write("Nhap so can kiem tra nguyen to: ");
+            int soCanKiemTra = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{KiemTraNguyenTo(soCanKiemTra)}");
             //Bai 7
             //Bai 8
             //Bai 9
             //Bai 10
             //Bai 11
             //Bai 12
+            Console.Write("Nhap do C: ");
+            double celsius = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Do F tuong ung la: {CelsiusToFahrenheit(celsius)}");
             //Bai 13
             //Bai 14
             int e = 738;
@@ -61,6 +73,39 @@ namespace Ho_Minh_Hung.Session6
         static int timSoLonNhat(int a, int b, int c)
         {
             return Math.Max(Math.Max(a, b), c);
+        }
+
+        static long TinhGiaiThua(int n)
+        {
+            long giaiThua = 1;
+            for(int i = 1; i <= n; i++)
+            {
+                giaiThua *= i;
+            }
+            return giaiThua;
+        }
+
+        static string DaoNguocChuoi(string input)
+        {
+            char[] chuyenThanhMang = input.ToCharArray();
+            Array.Reverse(chuyenThanhMang);
+            string chuoiDaDao = new string(chuyenThanhMang);
+            return chuoiDaDao;
+        }
+
+        static bool KiemTraNguyenTo(int n)
+        {
+            if (n <= 2) return false;
+            for (int i = 2; i <= n/2; i++)
+            {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+
+        static double CelsiusToFahrenheit(double c)
+        {
+            return (c * 1.8 + 32);
         }
 
         static int tongCacChuSo(int n)
