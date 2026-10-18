@@ -7,7 +7,7 @@ namespace Ho_Minh_Hung.Session6
 {
     internal class BTVN
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             //Bai 1
             int c = 5;
@@ -34,9 +34,22 @@ namespace Ho_Minh_Hung.Session6
             int soCanKiemTra = int.Parse(Console.ReadLine());
             Console.WriteLine($"{KiemTraNguyenTo(soCanKiemTra)}");
             //Bai 7
+            Console.WriteLine("Nhap do dai day fibonacci: ");
+            int doDai = int.Parse(Console.ReadLine());
+            fibonacci(doDai);
             //Bai 8
+            Console.WriteLine("Nhap chuoi can dem nguyen am");
+            string chuoi = Console.ReadLine();
+            Console.WriteLine($"So nguyen am trong chuoi la: {demNguyenAm(chuoi)}");
             //Bai 9
+            Console.WriteLine("Nhap so can duoc luy thua: ");
+            int soLuyThua = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhap bac luy thua: ");
+            int bacLuyThua = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Luy thua bac {bacLuyThua} cua {soLuyThua} la: {tinhLuyThua(soLuyThua, bacLuyThua)}");
             //Bai 10
+            int[] arr = new int[4] { 4, 5, 6, 7 };
+            Console.WriteLine($"Trung binh cua mang '4, 5, 6, 7' la : {tinhTrungBinhMang(arr)}");
             //Bai 11
             //Bai 12
             Console.Write("Nhap do C: ");
@@ -101,6 +114,48 @@ namespace Ho_Minh_Hung.Session6
                 if (n % i == 0) return false;
             }
             return true;
+        }
+
+        static void fibonacci(int n)
+        {
+            long a = 0;
+            long b = 1;
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(a + " ");
+                long next = a + b;
+                a = b;
+                b = next;
+            }
+        }
+
+        static int demNguyenAm(string s)
+        {
+            int count = 0;
+            foreach (char c in s)
+                if ("aieouAIEOU".Contains(c))
+                    count++;
+            return count;
+        }
+
+        static double tinhLuyThua(int x, int y)
+        {
+            double ketQua = 1;
+            for (int i = 0; i < y; i++)
+            {
+                ketQua *= x;
+            }
+            return ketQua;
+        }
+
+        static double tinhTrungBinhMang(int[] arr)
+        {
+            double sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            return sum / arr.Length;
         }
 
         static double CelsiusToFahrenheit(double c)
