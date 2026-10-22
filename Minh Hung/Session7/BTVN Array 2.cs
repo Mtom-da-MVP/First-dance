@@ -6,7 +6,7 @@ namespace Ho_Minh_Hung.Session7
 {
     internal class BTVN_Array_2
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             //Bubble Sort
             Console.WriteLine("Hay nhap 10 so nguyen vao mang: ");
